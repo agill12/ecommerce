@@ -16,28 +16,14 @@
               <input type="hidden" id="quantity" name="quantity" value="1"/>
               <input class="btn btn-success" type="submit" value="Add To Cart"/>
             </form>
-                  
-            <div>
-              <h2>Product Reviews</h2>
-            </div>
-      <div>
+              {% include "reviews/_show_reviews.html" %}
 
-              {% for review in products.reviews_received.all %}
-              <p>{{review.content}}</p>
-              <p><small >Rating {{review.rating}}</small></p>
-              <p><small class="text-muted">Posted by {{review.reviewer.username}}</small></p>
-              <hr>
-              {%endfor%}
-              </div>
-              <form method="post" action="{% url 'add_a_review' %}">
-                {% csrf_token %}
-                
-                {{ review_form | as_bootstrap }}
-                
-                <input type="hidden" name="product" value="{{products.id}}"/>
-                <input type="submit" class="btn btn-success" value="Leave Review"/>
-              </form>
-           
+              {% if user.is_authenticated %}
+              {% include "reviews/_add_review_form.html" %}
+              {% endif %}      
+            
+     
+
           </div>
     </div>
 </div>
