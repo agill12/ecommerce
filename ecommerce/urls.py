@@ -22,6 +22,7 @@ from accounts import urls as accounts_urls
 from products import urls as products_urls
 from cart import urls as cart_urls
 from reviews import urls as urls_reviews
+from checkout import urls as urls_checkout
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -31,6 +32,7 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     url(r'^cart/',include(cart_urls)),
     url(r'^reviews/', include(urls_reviews)),
+    url(r'^checkout/', include(urls_checkout)),
     
     
     
