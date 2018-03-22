@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'home',
     'accounts',
     'django_forms_bootstrap',
+    'products',
+    'cart',
+    'reviews',
+    
 ]
 
 MIDDLEWARE = [
@@ -66,6 +70,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+                'cart.contexts.get_items_in_cart_count',
+                
+
             ],
         },
     },

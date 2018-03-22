@@ -1,0 +1,187 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <link href="https://fonts.googleapis.com/css?family=Bungee+Outline|Damion|Montserrat|Sacramento|Source+Sans+Pro" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<style>
+h3{
+    font-size:15px;
+}
+.jumbo img{
+height:600px;
+width:auto;    
+}
+
+.searchicon{
+    background:transparent;
+    border:none;
+}
+img {
+    position: relative;
+    float: center;
+    width:  200px;
+    height: 200px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+#nav1{
+  margin-bottom:0px;
+ 
+  background:rgba(233,228,223,0.7);
+  border:none;
+  
+}
+#nav2{
+  
+  background:white;
+  border-bottom:1px,solid,grey;
+}
+#ul1 > li > a{
+    padding-top:5px !important; padding-bottom:0 !important;
+    height: 20px;
+    text-align:center;
+    color:black;
+}
+#actions > li > a{
+    padding-top:5px !important; padding-bottom:0 !important;
+    height: 20px;
+    text-align:center;
+}
+.navbar {min-height:30px !important;
+    
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+
+}
+.navbar-brand{
+    font-family: 'Bungee Outline', cursive;
+    font-size:30px;
+    margin-right:20px;
+}
+.navbar-nav{
+  font-family: 'Source Sans Pro', sans-serif;
+  
+  
+}
+
+.navbar-right{
+     font-family: 'Source Sans Pro', sans-serif;
+}
+.categories{
+    margin-right:50px;
+    color:black;
+}
+.searchform {
+    border:none;
+    
+    background:transparent;
+    width:1000px;
+}
+ 
+
+#ul1{
+    font-style: italic;
+    color:black;
+}
+@media (min-width: 768px) {#altcollapse{
+    display: none;
+  }}
+
+
+@media (min-width: 992px) { #altcollapse{
+    display: none;
+  }}
+
+
+@media (min-width: 1200px) {#altcollapse{
+    display: none;
+  }}
+@media (max-width: 575.98px) { #actions{
+  display:none;
+} }
+
+
+@media (max-width: 767.98px) {#actions{
+  display:none;
+}}   
+</style>
+</head>
+<body>
+   <nav class="navbar navbar-default" id="nav1">
+  <div class="container-fluid">
+    
+    <ul class="nav navbar-nav navbar-left" id="ul1">
+      <li ><a href="#">FREE SHIPPING NOW THROUGH MONTH END!!! </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" id="actions">
+      <li><a href="#">REGISTER|LOGIN|WISHLIST</a></li>
+      </ul>
+    
+  </div><!-- /.container-fluid -->
+</nav>     
+  <nav class="navbar navbar-default" id="nav2">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsing2" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">NotePaper</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id=collapsing2>
+      <ul class="nav navbar-nav">
+        <li><a href="#" class="categories">Pens </a></li>
+        <li><a href="#" class="categories">Pencils</a></li>
+        <li><a href="#" class="categories">Paper</a></li>
+        <li><a href="#" class="categories">Gifts</a></li>
+    
+      </ul>
+      <form class="navbar-form navbar-nav">
+        <div class="form-group">
+          <input type="text" class="form-control searchform" placeholder="Search">
+        </div>
+        <button type="submit" class="searchicon"><i class="fas fa-search"></i></button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fas fa-shopping-cart"></i>
+
+</a></li>
+    <li><a href="#"><i class="far fa-heart"></i> 
+
+</a></li>
+   
+       
+      </ul>
+        <ul class="nav navbar-nav navbar-right" id="altcollapse">
+        <li><a href="#">Register</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Wishlist</a></li>
+       
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav> 
+ {% block content %} {% endblock %}
+
+
+
+
+</body>
+</html>

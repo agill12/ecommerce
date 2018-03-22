@@ -1,0 +1,97 @@
+{% load bootstrap_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/sandstone/bootstrap.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+</head>
+<body>
+SHOPPING CART
+  
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>    
+            <th>Product</th>    
+            <th>Quantity</th>    
+            <th>Price</th>
+            <th>Total</th>    
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart_items %}
+        <tr>
+            <td><img width="150" height="75" src="{{MEDIA_URL}}{{item.image}}"/></td>    
+            <td>{{ item.name }}</td>    
+            <td><form method="post" action="{% url 'update_quantity' item.product_id %}">
+                {% csrf_token %}
+                <input type="number" value="{{item.quantity}}" id="quantity" name="quantity"/>
+                <input type="submit" class="" value="Update"/>
+                </form></td>    
+            <td>€{{ item.price }}</td>
+            <td>€{{ item.total}}</td>
+          <td><form method="post" action="{% url 'remove_from_cart' item.product_id %}">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-success" value="Remove"/>
+                </form>
+            </td>
+
+        </tr>
+        {% endfor %}
+
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+            <td><strong>Total:</strong></td>
+            <td><strong>€{{total}}</strong></td>
+            
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><button type="button" class="btn btn-success">Checkout</button></td>
+        </tr>
+
+    </tbody>
+    
+</table>
+
+         
+          
+          
+         
+                        
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
