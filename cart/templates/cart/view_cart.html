@@ -7,7 +7,16 @@
 
 <a href="{% url 'checkout' %}" class="btn btn-success" role="button">Checkout</a>
 
-
+<form action="{% url 'apply_coupon' %}" method="post">
+        <legend>Enter Coupon Code</legend>
+        {% csrf_token %}
+        {{ form }}
+        <div class="form-group">
+            <input type="text" name="code"/>
+            <button type="submit" class="btn btn-primary">Apply</button>
+        </div>
+    </form>
+{{newtotal}}
 
 
 {% endblock content %}

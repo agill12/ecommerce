@@ -7,7 +7,7 @@ urlpatterns = [
     url(r'^view_cart', view_cart, name='view_cart'),
    url(r'^remove/(\d+)$', remove_from_cart, name='remove_from_cart'),
    url(r'^update/(\d+)$', update_quantity, name='update_quantity'),
-   
+   url(r'^coupon/$',apply_coupon,name="apply_coupon"),
     
 
     ]
